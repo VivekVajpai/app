@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+<%= render 'article' %>
+<h2>To create an article, you must have an account and logged in</h2>
+<% if logged_in? %>
+	<%= link_to 'New Article', new_article_path %>
+<% end %>

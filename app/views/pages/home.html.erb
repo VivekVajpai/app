@@ -1,0 +1,14 @@
+<h1>Welcome to Home page</h1>
+
+<h3><strong><%= link_to 'Articles', articles_path %></strong></h3>
+<h3><strong><%= link_to 'Users', users_path %></strong></h3>
+
+
+<% if logged_in? %>
+	<h3><strong><%= link_to current_user.username, user_path(current_user) %></strong></h3>
+	<h3><strong><%= link_to 'Logout', logout_path, method: :delete %></strong></h3>
+<% else %>
+	<h3><strong><%= link_to 'Login (if already have an account)', login_path %></strong></h3>
+<% end %>
+
+<h3><strong><%= link_to 'Sign up (for new users)', signup_path %></strong></h3>
